@@ -51,7 +51,6 @@ public class ExcelWriteTest {
         System.out.println("03生成完毕");
 
     }
-
     @Test
     public void testWrite07() throws Exception {
         //创建一个工作簿
@@ -82,12 +81,6 @@ public class ExcelWriteTest {
         //关闭流
         System.out.println("07生成完毕");
 
-    }
-    public static void main(String[] args) {
-
-        String isInvestor="111";
-
-        System.out.println( "0".equals(isInvestor)?"":"updateSetType");
     }
     @Test
     public void testWrite03BigData() throws Exception {
