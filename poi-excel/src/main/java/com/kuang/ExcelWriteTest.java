@@ -10,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 /**
@@ -83,12 +82,7 @@ public class ExcelWriteTest {
         System.out.println("07生成完毕");
 
     }
-    public static void main(String[] args) {
 
-        String isInvestor="111";
-
-        System.out.println( "0".equals(isInvestor)?"":"updateSetType");
-    }
     @Test
     public void testWrite03BigData() throws Exception {
         //开始时间
@@ -98,9 +92,9 @@ public class ExcelWriteTest {
         //创建一张表
         Sheet sheet = workbook.createSheet();
         //写入数据
-        for (int rowNum = 0;rowNum < 65536; rowNum++){
+        for (int rowNum = 0; rowNum < 65536; rowNum++) {
             Row row = sheet.createRow(rowNum);
-            for (int cellNum = 0;cellNum < 10; cellNum++){
+            for (int cellNum = 0; cellNum < 10; cellNum++) {
                 Cell cell = row.createCell(cellNum);
                 cell.setCellValue(cellNum);
             }
@@ -111,7 +105,9 @@ public class ExcelWriteTest {
         fileOutputStream.close();
         //结束时间
         long end = System.currentTimeMillis();
-        System.out.println(begin-end);
+        System.out.println(begin - end);
 
     }
+
 }
+
