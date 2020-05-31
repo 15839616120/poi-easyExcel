@@ -108,4 +108,65 @@ public class ExcelWriteTest {
         System.out.println(begin-end);
 
     }
+
+
+    @Test
+    public void testWrite07BigData() throws Exception {
+        //开始时间
+        long begin = System.currentTimeMillis();
+        //创建一个工作薄
+        Workbook workbook = new XSSFWorkbook();
+        //创建一张表
+        Sheet sheet = workbook.createSheet();
+        //写入数据
+        //行
+        for (int rowNum = 0;rowNum < 65537; rowNum++){
+            Row row = sheet.createRow(rowNum);
+            //列
+            for (int cellNum = 0;cellNum < 10; cellNum++){
+                Cell cell = row.createCell(cellNum);
+                cell.setCellValue(cellNum);
+            }
+        }
+        //输出
+        FileOutputStream fileOutputStream = new FileOutputStream(PATH + "testWrite07BigData.xlsx");
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+        //结束时间
+        long end = System.currentTimeMillis();
+        System.out.println(begin-end);
+
+    }
+
+   //SXSSFWorkbook   大数据，快速实现的方式
+    //多了一个清楚临时文件的步骤
+    @Test
+    public void testWrite07BigDataSuper() throws Exception {
+        //开始时间
+        long begin = System.currentTimeMillis();
+        //创建一个工作薄
+        Workbook workbook = new SXSSFWorkbook();
+        //创建一张表
+        Sheet sheet = workbook.createSheet();
+        //写入数据
+        //行
+        for (int rowNum = 0;rowNum < 65537; rowNum++){
+            Row row = sheet.createRow(rowNum);
+            //列
+            for (int cellNum = 0;cellNum < 10; cellNum++){
+                Cell cell = row.createCell(cellNum);
+                cell.setCellValue(cellNum);
+            }
+        }
+        //输出
+        FileOutputStream fileOutputStream = new FileOutputStream(PATH + "testWrite07BigDataSuper.xlsx");
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+        //清除临时文件
+        ((SXSSFWorkbook)workbook).dispose();
+        //结束时间
+        long end = System.currentTimeMillis();
+        System.out.println(begin-end);
+
+    }
 }
