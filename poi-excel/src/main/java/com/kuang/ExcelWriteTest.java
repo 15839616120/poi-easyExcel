@@ -86,12 +86,14 @@ public class ExcelWriteTest {
         //开始时间
         long begin = System.currentTimeMillis();
         //创建一个工作薄
-        Workbook workbook = new SXSSFWorkbook();
+        Workbook workbook = new HSSFWorkbook();
         //创建一张表
         Sheet sheet = workbook.createSheet();
         //写入数据
+        //行
         for (int rowNum = 0;rowNum < 65536; rowNum++){
             Row row = sheet.createRow(rowNum);
+            //列
             for (int cellNum = 0;cellNum < 10; cellNum++){
                 Cell cell = row.createCell(cellNum);
                 cell.setCellValue(cellNum);
