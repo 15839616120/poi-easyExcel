@@ -138,8 +138,12 @@ public class ExcelWriteTest {
 
     }
 
-   //SXSSFWorkbook   大数据，快速实现的方式
-    //多了一个清楚临时文件的步骤
+
+    /**
+     * SXSSFWorkbook   大数据，快速实现的方式
+     * 多了一个清除临时文件的步骤
+     * @throws Exception
+     */
     @Test
     public void testWrite07BigDataSuper() throws Exception {
         //开始时间
