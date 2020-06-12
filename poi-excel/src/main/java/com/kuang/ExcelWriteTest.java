@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
  */
 public class ExcelWriteTest {
 
-    String PATH = "D:\\code\\poi-easyExcel\\poi-excel";
+    String PATH = "D:\\code\\excel";
 
     @Test
     public void testWrite03() throws Exception {
@@ -48,7 +48,6 @@ public class ExcelWriteTest {
 
         //关闭流
         System.out.println("03生成完毕");
-
     }
     @Test
     public void testWrite07() throws Exception {
@@ -108,8 +107,6 @@ public class ExcelWriteTest {
         System.out.println(begin-end);
 
     }
-
-
     @Test
     public void testWrite07BigData() throws Exception {
         //开始时间
@@ -137,7 +134,6 @@ public class ExcelWriteTest {
         System.out.println(begin-end);
 
     }
-
 
     /**
      * SXSSFWorkbook   大数据，快速实现的方式
@@ -173,4 +169,6 @@ public class ExcelWriteTest {
         System.out.println(begin-end);
 
     }
+
+
 }
